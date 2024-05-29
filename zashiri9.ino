@@ -10,22 +10,22 @@ void setup() {
   pinMode(ledgreen, OUTPUT);//sets the digital pin as output
 }
 void loop() {
-  float voltage = analogRead(A2);
-  float Temp = voltage * 0.48828125;
-  lcd.setCursor(0, 0);
-  lcd.print("Temp: ");
-  lcd.print(Temp);
-  lcd.print(" *C");
+  float voltage = analogRead(A2);//read the inpute voltage(analog ppin A2)
+  float Temp = voltage * 0.48828125; //computing Temp
+  lcd.setCursor(0, 0); //Character positioning
+  lcd.print("Temp: "); //show Temp
+  lcd.print(Temp);//show Temp
+  lcd.print(" *C");//show Temp
   
   if (Temp > 30)
   { digitalWrite(ledred, HIGH);//turns the ledred on
-  lcd.setCursor(0, 1);
+  lcd.setCursor(0, 1);//Character positioning
     lcd.print("warm");//show temp
   }
   else
   { digitalWrite(ledred, LOW);//turns the ledred off
     digitalWrite(ledgreen, HIGH);//turns the ledgreen on
-    lcd.setCursor(0, 1);
+    lcd.setCursor(0, 1);//Character positioning
     lcd.print("cold");//show temp
   }
   delay(2000);//waits for 2 seconds
